@@ -1,69 +1,125 @@
-# React + TypeScript + Vite
+# 🚀 React + Vite + TypeScript + Ant Design User Management
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A professional **React + Vite + TypeScript** project for managing users with login authentication, multilingual support, and responsive design.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- 🔐 **Login Page** (mock authentication)
+- 📋 **User Management** with CRUD (Create, Read, Update, Delete)
+- 🔎 **Search & Filter** users by name and school
+- 🌍 **Internationalization (English + Russian)** with `react-i18next`
+- 📱 **Responsive UI** (ID & Name columns fixed, others scrollable)
+- 🎨 Styled using **Ant Design**
+- 📦 Clean and scalable folder structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📂 Project Structure
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```md
+src/
+│── assets/ # Static assets (images, icons, etc.)
+│
+│── components/ # Reusable UI components
+│ ├── LanguageSwitcher.tsx # Dropdown for switching language
+│ ├── UserForm.tsx # Modal form for Create/Edit user
+│ └── UserTable.tsx # Table with fixed columns & actions
+│
+│── hooks/ # Custom React hooks
+│ └── useUsers.ts # CRUD logic for users
+│
+│── layouts/ # Layout components
+│ └── MainLayout.tsx # App layout with header & footer
+│
+│── pages/ # Application pages
+│ ├── Login.tsx # Login page
+│ └── UserManagement.tsx # Main user management page
+│
+│── types/ # TypeScript type definitions
+│ └── user.ts # User interface
+│
+│── utils/ # Utility functions
+│ └── storage.ts # LocalStorage helpers (auth token)
+│
+│── i18n.ts # i18next configuration (English & Russian)
+│── App.tsx # Root app with routes
+│── main.tsx # Application entry point
+│── index.css # Global styles
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## ⚡ Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Follow these steps to set up and run the project on your local machine.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+### ✅ Requirements
+
+Before you begin, make sure you have installed:
+
+- [Node.js](https://nodejs.org/) **v18 or later**
+- [npm](https://www.npmjs.com/) **v9 or later**
+- Recommended editor: [Visual Studio Code](https://code.visualstudio.com/)
+- Git for version control
+
+---
+
+### 📥 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/user-management-antd.git
+cd user-management-antd
 ```
+
+### 📦 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### ▶️ 3. Start the Development Server
+
+```bash
+npm run dev
+```
+
+### 🏗️ 4. Build for Production
+
+```bash
+npm run build
+
+```
+
+### 🌍 6. Login & Languages
+
+- Navigate to `/login` and log in with **any username & password** (mock authentication).
+- After login, you will be redirected to the **User Management** page.
+- Use the **language switcher** in the header to toggle between:
+  - 🇬🇧 **English**
+  - 🇷🇺 **Russian**
+
+---
+
+## 📋 User Management Features
+
+- ➕ **Add Users** via modal form
+- ✏️ **Edit Users** inline with modal
+- ❌ **Delete Users** with confirmation
+- 📑 **Pagination** (10 users per page)
+- 🔎 **Search by name or surname**
+- 🏫 **Filter by school**
+- 📱 **Responsive table** with fixed ID & Name columns
+
+---
+
+## 🛠️ Tech Stack
+
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Ant Design](https://ant.design/)
+- [i18next](https://www.i18next.com/)
+- [React-i18next](https://react.i18next.com/)
+- [React Router](https://reactrouter.com/)
